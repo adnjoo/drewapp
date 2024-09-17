@@ -5,7 +5,7 @@
   <p><%= @message %></p>
 <% end %>
 
-<%= form_with url: '/games/guess', method: 'post', local: true do %>
+<%= form_with url: '/games/guess', method: 'post', local: true, data: { turbo: false } do %>
   <%= hidden_field_tag :target_number, @target_number %>
   <%= hidden_field_tag :tries, @tries %>
   
