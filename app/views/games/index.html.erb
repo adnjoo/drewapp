@@ -1,2 +1,16 @@
-<h1>Games#index</h1>
-<p>Find me in app/views/games/index.html.erb</p>
+<h1>Number Guessing Game</h1>
+<p>You have <%= @max_tries - @tries %> tries left.</p>
+
+<% if @message %>
+  <p><%= @message %></p>
+<% end %>
+
+<%= form_with url: '/games/guess', method: 'post', local: true do %>
+  <%= hidden_field_tag :target_number, @target_number %>
+  <%= hidden_field_tag :tries, @tries %>
+  
+  <%= label_tag :guess, "Enter your guess:" %>
+  <%= text_field_tag :guess %>
+  
+  <%= submit_tag "Submit Guess" %>
+<% end %>
