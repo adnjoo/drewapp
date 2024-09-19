@@ -6,5 +6,8 @@ Rails.application.routes.draw do
   # articles
   root "articles#index"
 
+  # api
+  get "api/hello", to: "api#hello"
+
   resources :articles
 end
