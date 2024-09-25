@@ -5,21 +5,19 @@
         <div>
           <!-- Website Logo -->
           <a href="#" class="flex items-center py-4 px-2">
-            <span class="font-semibold text-gray-500 text-lg">MyApp</span>
+            <span class="font-semibold text-gray-500 text-lg">Drew's App</span>
           </a>
         </div>
         <!-- Primary Navbar items -->
         <div class="hidden md:flex items-center space-x-1">
-          <a href="#" class="py-4 px-2 text-green-500 border-b-4 border-green-500 font-semibold">Home</a>
-          <a href="#" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Features</a>
-          <a href="#" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Pricing</a>
-          <a href="#" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Contact</a>
+          <a href="/articles" class="py-4 px-2 text-gray-500 font-semibold hover:underline">Home</a>
+          <a href="/articles/new" class="py-4 px-2 text-gray-500 font-semibold hover:underline">New</a>
         </div>
       </div>
       <!-- Secondary Navbar items -->
       <div class="hidden md:flex items-center space-x-3 ">
-        <a href="#" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">Log In</a>
-        <a href="#" class="py-2 px-2 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300">Sign Up</a>
+        <% # <a href="#" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">Log In</a> %>
+        <% # <a href="#" class="py-2 px-2 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300">Sign Up</a> %>
       </div>
       <!-- Mobile menu button -->
       <div class="md:hidden flex items-center">
@@ -42,10 +40,10 @@
   <!-- mobile menu -->
   <div class="hidden mobile-menu">
     <ul class="">
-      <li><a href="#" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Home</a></li>
-      <li><a href="#" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Features</a></li>
-      <li><a href="#" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Pricing</a></li>
-      <li><a href="#" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Contact</a></li>
+      <li><a href="/articles" class="block text-sm px-2 py-4 text-black font-semibold hover:underline">Home</a></li>
+      <li><a href="/articles/new" class="block text-sm px-2 py-4 text-black font-semibold hover:underline">New</a></li>
+      <% # <li><a href="#" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Pricing</a></li> %>
+      <% # <li><a href="#" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Contact</a></li> %>
     </ul>
   </div>
 </nav>
