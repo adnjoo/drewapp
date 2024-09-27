@@ -6,8 +6,11 @@ Rails.application.routes.draw do
   # articles
   root "articles#index"
 
-  # api
-  get "api/hello", to: "api#hello"
+  # api namespace
+  namespace :api do
+    get "hello", to: "api#hello"
+    resources :articles, only: [ :index, :show ]
+  end
 
   resources :articles
 end
