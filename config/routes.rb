@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # api namespace
   namespace :api do
     get "hello", to: "api#hello"
+    resources :articles, only: [:index, :show]
   end
 
   resources :articles
