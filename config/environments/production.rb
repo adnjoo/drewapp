@@ -60,7 +60,7 @@ Rails.application.configure do
     .then { |logger| ActiveSupport::TaggedLogging.new(logger) }
 
   # Prepend all log lines with the following tags.
-  config.log_tags = [:request_id]
+  config.log_tags = [ :request_id ]
 
   # "info" includes generic and useful information about system operation, but avoids logging too much
   # information to avoid inadvertent exposure of personally identifiable information (PII). If you
@@ -107,7 +107,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :mailgun
   config.action_mailer.mailgun_settings = {
     api_key: ENV["MAILGUN_API_KEY"],
-    domain: ENV["MAILGUN_DOMAIN"],
+    domain: ENV["MAILGUN_DOMAIN"]
   }
 
   # Raise errors if the mailer can't send emails.
