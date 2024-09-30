@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # game logic
   get "games/index"
   post "games/guess", to: "games#guess"

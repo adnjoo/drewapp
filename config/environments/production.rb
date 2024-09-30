@@ -56,7 +56,7 @@ Rails.application.configure do
 
   # Log to STDOUT by default
   config.logger = ActiveSupport::Logger.new(STDOUT)
-    .tap  { |logger| logger.formatter = ::Logger::Formatter.new }
+    .tap { |logger| logger.formatter = ::Logger::Formatter.new }
     .then { |logger| ActiveSupport::TaggedLogging.new(logger) }
 
   # Prepend all log lines with the following tags.
@@ -99,10 +99,21 @@ Rails.application.configure do
   # ]
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
-  # Mailgun
+
+  # Action Mailer default URL for production emails.
+  config.action_mailer.default_url_options = { host: "your-production-domain.com", protocol: "https" }
+
+  # Mailgun settings for production email delivery.
   config.action_mailer.delivery_method = :mailgun
   config.action_mailer.mailgun_settings = {
     api_key: ENV["MAILGUN_API_KEY"],
     domain: ENV["MAILGUN_DOMAIN"]
   }
+
+  # Raise errors if the mailer can't send emails.
+  config.action_mailer.raise_delivery_errors = true
+
+  # Disable caching for Action Mailer templates even if Action Controller
+  # caching is enabled.
+  config.action_mailer.perform_caching = false
 end
