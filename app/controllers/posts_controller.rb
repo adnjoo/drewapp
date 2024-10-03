@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
   WORDPRESS_SITE_URL = "https://andrewnjoo.com"
+  POST_COUNT = 30
 
   def index
-    response = HTTP.get("#{WORDPRESS_SITE_URL}/wp-json/wp/v2/posts")
+    response = HTTP.get("#{WORDPRESS_SITE_URL}/wp-json/wp/v2/posts?per_page=#{POST_COUNT}")
     @posts = JSON.parse(response.body)
   end
 
