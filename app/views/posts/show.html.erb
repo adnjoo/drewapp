@@ -1,4 +1,14 @@
+<!-- app/views/posts/show.html.erb -->
+<h1><%= @post["title"]["rendered"] %></h1>
+<p><%= @post["date"] %></p>
+
 <div>
-  <h1 class="font-bold text-4xl">Posts#show</h1>
-  <p>Find me in app/views/posts/show.html.erb</p>
+  <%= @post["content"]["rendered"].html_safe %> <!-- Make sure content is safe for rendering HTML -->
 </div>
+
+<p>Link to the post: <a href="<%= @post["link"] %>"><%= @post["link"] %></a></p>
+
+<% if @post["jetpack_featured_media_url"] %>
+  <img src="<%= @post["jetpack_featured_media_url"] %>" alt="Featured Image">
+<% end %>
+

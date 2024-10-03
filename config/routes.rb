@@ -1,18 +1,21 @@
 Rails.application.routes.draw do
-  get "posts/show"
+  # Devise authentication
   devise_for :users
-  # game logic
+
+  # Game logic routes
   get "games/index"
   post "games/guess", to: "games#guess"
 
-  # articles
+  # Articles
   root "articles#index"
+  resources :articles
 
-  # api namespace
+  # Posts
+  resources :posts, only: [ :index, :show ]
+
+  # API namespace
   namespace :api do
     get "hello", to: "api#hello"
     resources :articles, only: [ :index, :show ]
   end
-
-  resources :articles
 end

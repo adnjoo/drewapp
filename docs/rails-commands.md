@@ -12,4 +12,4 @@ ActiveRecord::Base.connection.current_database
 
 Migrate: `rails db:migrate`
 
-Linting with `rubocop`: `bin/rubocop`
+Linting with `rubocop`: `rubocop`
