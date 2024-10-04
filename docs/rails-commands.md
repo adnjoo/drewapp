@@ -15,3 +15,5 @@ Migrate: `rails db:migrate`
 Linting with `rubocop`: `rubocop`
 
 Install dependencies: `bundle install`
+
+Run tests: `rails test`
