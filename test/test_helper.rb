@@ -1,3 +1,12 @@
+if ENV["COVERAGE"]
+  require "simplecov"
+  SimpleCov.start "rails" do
+    add_filter "/test/"
+  end
+
+  SimpleCov.minimum_coverage 8
+end
+
 ENV["RAILS_ENV"] ||= "test"
 require_relative "../config/environment"
 require "rails/test_help"

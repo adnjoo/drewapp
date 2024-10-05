@@ -8,11 +8,19 @@ Linting: `rubocop`
 
 Install dependencies: `bundle install`
 
-Run tests: `rails test`
-
 Rails Console: `rails c`
 
 ---
+
+### Testing
+
+Run tests: `rails test`
+
+Generate coverage report: `COVERAGE=true rails test`
+
+---
+
+### Misc
 
 Generate password: `BCrypt::Password.create('password1')`
 
