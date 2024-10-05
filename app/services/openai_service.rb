@@ -1,14 +1,17 @@
 require "openai"
 
 class OpenaiService
-  def initialize
-    @client = OpenAI::Client.new(api_key: Rails.application.credentials.dig(:openai, :api_key))
+  attr_accessor :model
+
+  def initialize(model = "gpt-4o")
+    @client = OpenAI::Client.new(access_token: ENV["OPENAI_KEY"])
+    @model = model
   end
 
-  def chat(prompt, model = "gpt-4o")
+  def chat(prompt)
     response = @client.chat(
       parameters: {
-        model: model,
+        model: @model,
         messages: [ { role: "user", content: prompt } ],
         max_tokens: 150
       }
