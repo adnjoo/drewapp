@@ -262,6 +262,7 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     rexml (3.3.7)
+    rouge (4.4.0)
     rubocop (1.66.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -371,6 +372,7 @@ DEPENDENCIES
   pg (~> 1.5)
   puma (>= 5.0)
   rails (~> 7.2.1)
+  rouge
   rubocop-rails-omakase
   ruby-openai
   selenium-webdriver
