@@ -4,7 +4,7 @@ if ENV["COVERAGE"]
     add_filter "/test/"
   end
 
-  # SimpleCov.minimum_coverage 50
+  SimpleCov.minimum_coverage 8
 end
 
 ENV["RAILS_ENV"] ||= "test"
