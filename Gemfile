@@ -34,19 +34,25 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
-gem "tailwindcss-rails"
-
 gem "dotenv-rails"
 
 gem "devise"
 
-gem "mailgun-ruby"
-
 gem "http"
+
+# API
+
+gem "mailgun-ruby"
 
 gem "ruby-openai"
 
 gem "bcrypt"
+
+# Styling
+
+gem "tailwindcss-rails"
+
+gem "redcarpet"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
