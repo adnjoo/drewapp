@@ -1,0 +1,17 @@
+<h1>Chat with OpenAI</h1>
+
+<%= form_with url: chats_create_path, method: :post, data: { turbo: false } do |form| %>
+  <div class="field">
+    <%= form.label :prompt, "Enter your message" %><br>
+    <%= form.text_area :prompt, rows: 5, cols: 40 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Send" %>
+  </div>
+<% end %>
+
+<% if @response.present? %>
+  <h3>Response:</h3>
+  <p><%= @response %></p>
+<% end %>

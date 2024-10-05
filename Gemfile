@@ -44,6 +44,8 @@ gem "mailgun-ruby"
 
 gem "http"
 
+gem "ruby-openai"
+
 gem "bcrypt"
 
 group :development, :test do
