@@ -1,6 +1,10 @@
-require "simplecov"
-SimpleCov.start "rails" do
-  add_filter "/test/"
+if ENV["COVERAGE"]
+  require "simplecov"
+  SimpleCov.start "rails" do
+    add_filter "/test/"
+  end
+
+  # SimpleCov.minimum_coverage 50
 end
 
 ENV["RAILS_ENV"] ||= "test"
