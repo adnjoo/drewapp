@@ -38,17 +38,21 @@ gem "dotenv-rails"
 
 gem "devise"
 
-gem "mailgun-ruby"
-
 gem "http"
+
+# API
+
+gem "mailgun-ruby"
 
 gem "ruby-openai"
 
 gem "bcrypt"
 
+# Styling
+
 gem "tailwindcss-rails"
 
-gem "rouge"
+gem "redcarpet"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
