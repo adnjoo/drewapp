@@ -3,7 +3,7 @@ require "openai"
 class OpenaiService
   attr_accessor :model
 
-  def initialize(model = "gpt-4o")
+  def initialize(model = "gpt-3.5-turbo")
     @client = OpenAI::Client.new(access_token: ENV["OPENAI_KEY"])
     @model = model
   end
