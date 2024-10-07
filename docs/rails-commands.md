@@ -20,6 +20,8 @@ Generate coverage report: `COVERAGE=true rails test`
 
 Count SLOC: `rake stats`
 
+System test: `rails test:system`
+
 ---
 
 ### Misc
