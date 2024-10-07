@@ -26,4 +26,6 @@ Count SLOC: `rake stats`
 
 Generate password: `BCrypt::Password.create('password1')`
 
-See current databas: `ActiveRecord::Base.connection.current_database`
+See current database: `ActiveRecord::Base.connection.current_database`
+
+Read a gem: `bundle open ${gem-name}`
