@@ -28,4 +28,9 @@ Generate password: `BCrypt::Password.create('password1')`
 
 See current database: `ActiveRecord::Base.connection.current_database`
 
-Read a gem: `bundle open ${gem-name}`
+Read a gem: 
+
+```bash
+export EDITOR="code --wait"
+bundle open ${gem-name}`
+```
