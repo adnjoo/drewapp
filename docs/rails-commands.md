@@ -14,7 +14,11 @@ Rails Console: `rails c`
 
 ### Testing
 
+Run all tests: `rails test:all`
+
 Run tests: `rails test`
+
+Verbose: `rails test --verbose`
 
 Generate coverage report: `COVERAGE=true rails test`
 

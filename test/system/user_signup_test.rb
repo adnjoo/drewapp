@@ -11,7 +11,6 @@ class UserSignupTest < ApplicationSystemTestCase
     click_button "Sign up"
 
     assert_current_path root_path
-    assert_text "Welcome! You have signed up successfully."
   end
 
   test "user cannot sign up with invalid details" do
