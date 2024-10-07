@@ -3,11 +3,11 @@ class ChatsController < ApplicationController
 
   def new
     @response = session.delete(:chat_response)
-    @selected_model = session.delete(:selected_model) || "gpt-4o-mini"
+    @selected_model = session.delete(:selected_model)
   end
 
   def create
-    service = OpenaiService.new(params[:model] || "gpt-4o-mini")
+    service = OpenaiService.new(params[:model])
     @response = service.chat(params[:prompt])
 
     session[:chat_response] = @response
