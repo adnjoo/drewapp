@@ -1,21 +1,11 @@
-<nav class="bg-white shadow-lg">
+<nav class="bg-white shadow-lg" data-controller="hello" data-hello-visibility-class="hidden">
   <div class="max-w-6xl mx-auto px-4">
-    <div class="flex justify-between">
-      <div class="flex space-x-7">
-        <div>
-          <!-- Website Logo -->
-          <a href="/" class="flex items-center py-4 px-2">
-            <span class="font-semibold text-gray-500 text-lg">DrewApp</span>
-          </a>
-        </div>
-        <!-- Primary Navbar items -->
-        <div class="hidden md:flex items-center space-x-1">
-          <a href="/articles" class="py-4 px-2 text-gray-500 font-semibold hover:underline">Home</a>
-          <a href="/articles/new" class="py-4 px-2 text-gray-500 font-semibold hover:underline">New</a>
-        </div>
-      </div>
-      <!-- Secondary Navbar items -->
-      <div class="hidden md:flex items-center space-x-3 ">
+    <div class="flex justify-between items-center py-4">
+      <!-- Logo -->
+      <a href="/" class="text-lg font-semibold text-gray-500">DrewApp</a>
+      <!-- Primary Navbar items -->
+      <div class="hidden md:flex items-center space-x-1">
+        <a href="/articles/new" class="py-4 px-2 text-gray-500 font-semibold hover:underline">New</a>
         <% if user_signed_in? %>
           <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "py-4 px-2 text-gray-500 font-semibold hover:underline" %>
         <% else %>
@@ -23,41 +13,17 @@
         <% end %>
       </div>
       <!-- Mobile menu button -->
-      <div class="md:hidden flex items-center">
-        <button class="outline-none mobile-menu-button">
-          <svg class="w-6 h-6 text-gray-500 hover:text-green-500"
-            x-show="!showMenu"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-      </div>
+      <button class="md:hidden" data-action="click->hello#toggle">
+        <svg class="w-6 h-6 text-gray-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
     </div>
   </div>
-  <!-- mobile menu -->
-  <div class="hidden mobile-menu">
-    <ul class="">
-      <li><a href="/articles" class="block text-sm px-2 py-4 text-black font-semibold hover:underline">Home</a></li>
-      <li><a href="/articles/new" class="block text-sm px-2 py-4 text-black font-semibold hover:underline">New</a></li>
-      <% # <li><a href="#" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Pricing</a></li> %>
-      <% # <li><a href="#" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Contact</a></li> %>
-    </ul>
+  <!-- Mobile menu (hidden by default) -->
+  <div class="hidden px-4" data-hello-target="element">
+    <a href="/" class="block py-2 text-gray-500 hover:underline">Home</a>
+    <a href="/new" class="block py-2 text-gray-500 hover:underline">New</a>
   </div>
+</div>
 </nav>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const btn = document.querySelector('.mobile-menu-button');
-    const menu = document.querySelector('.mobile-menu');
-
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
-  });
-</script>
