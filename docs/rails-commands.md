@@ -2,7 +2,6 @@
 
 See Rails env `rails r "puts Rails.env"`
 
-Migrate: `rails db:migrate`
 
 Linting: `rubocop`
 
@@ -26,7 +25,11 @@ Count SLOC: `rake stats`
 
 System test: `rails test:system`
 
----
+### Database
+
+Create: `rails db:create`
+
+Migrate: `rails db:migrate`
 
 ### Misc
 
