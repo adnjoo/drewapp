@@ -1,4 +1,4 @@
-<nav class="bg-white shadow-lg" data-controller="hello" data-hello-visibility-class="hidden">
+<nav class="bg-white shadow-lg" data-controller="toggle">
   <div class="max-w-6xl mx-auto px-4">
     <div class="flex justify-between items-center py-4">
       <!-- Logo -->
@@ -13,7 +13,7 @@
         <% end %>
       </div>
       <!-- Mobile menu button -->
-      <button class="md:hidden" data-action="click->hello#toggle">
+      <button class="md:hidden" data-action="click->toggle#toggle">
         <svg class="w-6 h-6 text-gray-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
           <path d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
@@ -21,9 +21,8 @@
     </div>
   </div>
   <!-- Mobile menu (hidden by default) -->
-  <div class="hidden px-4" data-hello-target="element">
+  <div class="hidden px-4" data-toggle-target="element">
     <a href="/" class="block py-2 text-gray-500 hover:underline">Home</a>
     <a href="/new" class="block py-2 text-gray-500 hover:underline">New</a>
   </div>
-</div>
 </nav>
