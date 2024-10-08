@@ -30,7 +30,7 @@ jobs:
       - name: Parse and Update SLOC
         id: update_sloc
         run: |
-          TOTAL_SLOC=$(jq 'reduce .[] as $item (0; . + $item) / 75' sloc.json)
+          TOTAL_SLOC=$(jq 'reduce to_entries[] as $item (0; . + $item.value) / 75' sloc.json)
           echo "Total SLOC: $TOTAL_SLOC"
           echo "sloc=$TOTAL_SLOC" >> $GITHUB_ENV
 
