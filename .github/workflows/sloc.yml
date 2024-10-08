@@ -1,0 +1,45 @@
+name: SLOC Count
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  calculate-sloc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install sloc
+        run: npm install -g sloc
+
+      - name: Calculate SLOC
+        run: sloc . --format json > sloc.json
+
+      - name: Parse and Update SLOC
+        id: update_sloc
+        run: |
+          TOTAL_SLOC=$(jq 'reduce .[] as $item (0; . + $item) / 75' sloc.json)
+          echo "Total SLOC: $TOTAL_SLOC"
+          echo "sloc=$TOTAL_SLOC" >> $GITHUB_ENV
+
+      - name: Update README Badge
+        run: |
+          SLOC_BADGE_URL="https://img.shields.io/badge/SLOC-${{ env.sloc }}-blue"
+          sed -i "s|https://img.shields.io/badge/SLOC-[0-9]*-blue|$SLOC_BADGE_URL|g" README.md
+
+      - name: Commit Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "Update SLOC badge"
+          git push
