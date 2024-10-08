@@ -6,6 +6,8 @@ Migrate: `rails db:migrate`
 
 Linting: `rubocop`
 
+Add dependency: `bundle add ${GEM}`
+
 Install dependencies: `bundle install`
 
 Rails Console: `rails c`

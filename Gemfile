@@ -76,3 +76,5 @@ group :test do
   gem "selenium-webdriver"
   gem "simplecov", require: false
 end
+
+gem "shadcn-ui", "~> 0.0.15"
