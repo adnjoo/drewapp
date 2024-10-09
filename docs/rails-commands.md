@@ -10,7 +10,7 @@ Rails Console: `rails c`
 
 ### Generator
 
-Destroy: `rails destroy controller Games`
+Destroy: `rails destroy controller <controller-name>`
 
 ### Testing
 

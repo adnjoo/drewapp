@@ -23,7 +23,7 @@ gem "jbuilder"
 # gem "kredis"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
+gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
@@ -34,25 +34,23 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+# Load environment variables from .env files [https://github.com/bkeepers/dotenv]
 gem "dotenv-rails"
 
+# Authentication framework for Rails [https://github.com/heartcombo/devise]
 gem "devise"
 
+# Simple HTTP client for Ruby [https://github.com/httprb/http]
 gem "http"
 
-# API
-
+# API wrapper for Mailgun [https://github.com/mailgun/mailgun-ruby]
 gem "mailgun-ruby"
 
+# API wrapper for OpenAI [https://github.com/alexrudall/ruby-openai]
 gem "ruby-openai"
 
-gem "bcrypt"
-
-# Styling
-
+# Styling framework for Rails with Tailwind CSS [https://github.com/rails/tailwindcss-rails]
 gem "tailwindcss-rails"
-
-gem "redcarpet"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
