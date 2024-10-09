@@ -96,11 +96,11 @@ To deploy DrewApp to a production environment, follow these steps (depending on 
 
 ### Contributing
 
-1. Fork the repository.
-2. Create a feature branch (`git checkout -b feature/my-new-feature`).
-3. Commit your changes (`git commit -am 'Add new feature'`).
-4. Push to the branch (`git push origin feature/my-new-feature`).
-5. Create a new pull request.
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/my-new-feature`)
+3. Commit your changes (`git commit -am 'Add new feature'`)
+4. Push to the branch (`git push origin feature/my-new-feature`)
+5. Create a new PR
 
 ### License
 
