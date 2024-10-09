@@ -85,14 +85,14 @@ bin/rails test:system
 
 To deploy DrewApp to a production environment, follow these steps (depending on your deployment service):
 
-1. Ensure all environment variables are set.
+1. Ensure all environment variables are set
 2. Run database migrations:
 
    ```bash
    rails db:migrate
    ```
 
-3. Restart the application.
+3. Restart the application
 
 ### Contributing
 
