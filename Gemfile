@@ -40,6 +40,8 @@ gem "bootsnap", require: false
 # Redcarpet gem for Markdown parsing
 gem "redcarpet"
 
+gem "redis"
+
 # Development and testing
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
