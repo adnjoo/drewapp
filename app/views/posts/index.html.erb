@@ -1,8 +1,0 @@
-<h1 class='text-xl mb-8'>Posts</h1>
-<ul class='mb-8'>
-  <% @posts.each do |post| %>
-    <li class='my-2'>
-      <%= link_to post['title']['rendered'], post_path(post['id']) %>
-    </li>
-  <% end %>
-</ul>
