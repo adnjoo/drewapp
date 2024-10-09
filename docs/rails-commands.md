@@ -47,4 +47,3 @@ Read a gem:
 export EDITOR="code --wait"
 bundle open ${gem-name}`
 ```
-
