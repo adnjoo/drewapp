@@ -1,21 +1,25 @@
-<h1>Chat with OpenAI</h1>
+<h1 class="text-center text-2xl font-semibold text-gray-800 mb-4">Chat with OpenAI</h1>
 
-<%= form_with url: chats_create_path, method: :post, data: { turbo: false } do |form| %>
-  <div class="field">
-    <%= form.label :prompt, "Enter your message" %><br>
-    <%= form.text_area :prompt, rows: 5, cols: 40 %>
+<div class="border border-gray-300 rounded-lg p-6 bg-white shadow-lg">
+  <div id="chat-box" class="h-96 overflow-y-auto p-4 bg-gray-50 rounded-lg mb-4">
+    <%= turbo_frame_tag :chat_response do %>
+      <% render "chat_response" %>
+    <% end %>
   </div>
 
-  <div class="field">
-    <%= form.label :model, "Choose a model" %><br>
-    <%= form.select :model, options_for_select([["GPT-4o-mini", "gpt-4o-mini"], ["GPT-4o", "gpt-4o"]], @selected_model) %>
-  </div>
+  <%= form_with url: chats_create_path, method: :post, data: { turbo: false }, class: "space-y-4" do |form| %>
+    <div class="field">
+      <%= form.label :prompt, "Enter your message", class: "block text-gray-700 font-medium" %>
+      <%= form.text_area :prompt, rows: 3, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit "Send" %>
-  </div>
-<% end %>
+    <div class="field">
+      <%= form.label :model, "Choose a model", class: "block text-gray-700 font-medium" %>
+      <%= form.select :model, options_for_select([["GPT-4o-mini", "gpt-4o-mini"], ["GPT-4o", "gpt-4o"]], @selected_model), class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" %>
+    </div>
 
-<%= turbo_frame_tag :chat_response do %>
-  <% render "chat_response" %>
-<% end %>
+    <div class="actions flex justify-end">
+      <%= form.submit "Send", class: "px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75" %>
+    </div>
+  <% end %>
+</div>
