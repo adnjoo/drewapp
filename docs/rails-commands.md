@@ -22,7 +22,6 @@ Verbose: `rails test --verbose`
 
 Generate coverage report: `COVERAGE=true rails test`
 
-Count SLOC: `rake stats`
 
 System test: `rails test:system`
 
@@ -33,6 +32,10 @@ Create: `rails db:create`
 Migrate: `rails db:migrate`
 
 ### Misc
+
+Count SLOC: `rake stats`
+
+Pipe stats to file: `rake custom:stats_to_file`
 
 Generate password: `BCrypt::Password.create('password1')`
 
