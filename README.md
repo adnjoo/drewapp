@@ -29,6 +29,14 @@ Ensure you have the following installed on your machine:
 - Rails 7.x.x
 - PostgreSQL (for database)
 
+.env
+```bash
+DATABASE_URL=..
+MAILGUN_KEY=..
+MAILGUN_DOMAIN=..
+OPENAI_KEY=..
+```
+
 ### Installation
 
 1. Clone the repository:
