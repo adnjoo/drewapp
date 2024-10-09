@@ -12,11 +12,13 @@ gem "bcrypt", "~> 3.1.7"
 # API wrapper for Mailgun [https://github.com/mailgun/mailgun-ruby]
 gem "mailgun-ruby"
 # API wrapper for OpenAI [https://github.com/alexrudall/ruby-openai]
-gem "ruby-openai"
+gem "ruby-openai", "~> 7.1.0"
 # Load environment variables from .env files [https://github.com/bkeepers/dotenv]
 gem "dotenv-rails"
 # Authentication framework for Rails [https://github.com/heartcombo/devise]
 gem "devise"
+# Simple background processing using Redis
+gem "sidekiq", "~> 7.2.4"
 
 # Frontend gems
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
