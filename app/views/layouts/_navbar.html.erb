@@ -4,16 +4,11 @@
       <!-- Logo -->
       <a href="/" class="text-lg font-semibold text-gray-500">DrewApp</a>
       <!-- Primary Navbar items -->
-      <div class="hidden md:flex items-center space-x-1">
-        <a href="/articles/new" class="py-4 px-2 text-gray-500 font-semibold hover:underline">New</a>
-        <% if user_signed_in? %>
-          <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "py-4 px-2 text-gray-500 font-semibold hover:underline" %>
-        <% else %>
-          <%= link_to "Log In", new_user_session_path, class: "py-4 px-2 text-gray-500 font-semibold hover:underline" %>
-        <% end %>
+      <div class="hidden sm:flex items-center space-x-1">
+        <%= render "layouts/navbar_links" %>
       </div>
       <!-- Mobile menu button -->
-      <button class="md:hidden" data-action="click->toggle#toggle">
+      <button class="sm:hidden p-2" data-action="click->toggle#toggle">
         <svg class="w-6 h-6 text-gray-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
           <path d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
@@ -21,8 +16,7 @@
     </div>
   </div>
   <!-- Mobile menu (hidden by default) -->
-  <div class="hidden px-4" data-toggle-target="element">
-    <a href="/" class="block py-2 text-gray-500 hover:underline">Home</a>
-    <a href="/new" class="block py-2 text-gray-500 hover:underline">New</a>
+  <div class="hidden flex flex-col sm:hidden" data-toggle-target="element">
+    <%= render "layouts/navbar_links" %>
   </div>
 </nav>

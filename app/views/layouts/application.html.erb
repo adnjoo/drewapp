@@ -21,9 +21,10 @@
   <body>
     <%= render "layouts/navbar" %>
 
-    <main class="container min-h-screen mx-auto mt-12 px-5 flex flex-col">
+    <main class="max-w-6xl min-h-[90vh] mx-auto mt-12 px-5 flex flex-col">
       <%= yield %>
     </main>
+
     <%= render "layouts/footer" %>
   </body>
 </html>
