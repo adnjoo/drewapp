@@ -2,14 +2,15 @@
 
 See Rails env `rails r "puts Rails.env"`
 
-
 Linting: `rubocop`
 
 Install dependencies: `bundle install`
 
 Rails Console: `rails c`
 
----
+### Generator
+
+Destroy: `rails destroy controller Games`
 
 ### Testing
 
