@@ -9,8 +9,9 @@ Rails.application.routes.draw do
 
   resources :posts, only: [ :index, :show ]
 
-  post "chats/create", to: "chats#create"
-  get "chats/home", to: "chats#new", as: :chats_home
+  resources :chats, only: %i[create show] do
+    resources :messages, only: %i[create]
+  end
 
   namespace :api do
     get "hello", to: "api#hello"
