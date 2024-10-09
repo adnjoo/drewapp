@@ -1,6 +1,3 @@
-Here’s an example of a more polished and complete `README` file for your project, `DrewApp`:
-
-```markdown
 # DrewApp
 
 DrewApp is a productivity tool that help users manage tasks effectively.
