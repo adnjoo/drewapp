@@ -16,9 +16,6 @@
   </div>
 <% end %>
 
-<% if @response.present? %>
-  <h3>Response:</h3>
-  <div>
-    <%= markdown(@response) %>
-  </div>
+<%= turbo_frame_tag :chat_response do %>
+  <% render "chat_response" %>
 <% end %>

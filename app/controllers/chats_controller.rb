@@ -13,6 +13,9 @@ class ChatsController < ApplicationController
     session[:chat_response] = @response
     session[:selected_model] = params[:model]
 
-    redirect_to chats_home_path
+    respond_to do |format|
+      format.turbo_stream
+      format.html { redirect_to chats_home_path }
+    end
   end
 end
