@@ -47,7 +47,7 @@
 - **See current database:**  
   `ActiveRecord::Base.connection.current_database`
 
-### Read a Gem
+### Read a Gem 💎
 
 ```bash
 export EDITOR="code --wait"
