@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   # Marketing
-  root "landing_page/index"
+  root "landing_page#index"
   # Blog
   resources :articles
 
