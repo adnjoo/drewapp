@@ -10,6 +10,8 @@
   `bundle install`
 - **Rails Console:**  
   `rails c`
+- **Routes**
+  `rails routes`
 
 ### Generators
 
