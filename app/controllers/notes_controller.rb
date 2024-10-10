@@ -5,6 +5,10 @@ class NotesController < ApplicationController
     @notes = current_user.notes
   end
 
+  def new
+    @note = Note.new
+  end
+
   def create
     @note = current_user.notes.build(note_params)
     if @note.save

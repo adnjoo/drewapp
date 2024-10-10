@@ -1,0 +1,13 @@
+<h1>Create a New Note</h1>
+
+<%= form_with model: @note, local: false do |form| %>
+  <div>
+    <%= form.label :content %>
+    <%= form.text_area :content, rows: 5 %>
+  </div>
+  <div>
+    <%= form.submit 'Create Note' %>
+  </div>
+<% end %>
+
+<%= link_to 'Back to Notes', notes_path %>

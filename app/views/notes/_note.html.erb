@@ -1,0 +1,9 @@
+<div class="note" id="<%= dom_id(note) %>">
+  <p><%= note.content %></p>
+  <%= form_with model: note, method: :patch, local: false do |form| %>
+    <%= form.check_box :completed, checked: note.completed %>
+    <%= form.submit 'Mark as Done' %>
+  <% end %>
+  <%= link_to 'Edit', edit_note_path(note) %> | 
+  <%= link_to 'Delete', note_path(note), method: :delete %>
+</div>

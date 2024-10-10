@@ -1,0 +1,13 @@
+<h1>Notes</h1>
+
+<div>
+  <%= link_to "Create Note", new_note_path, class: "button" %>
+</div>
+
+<p>Your Points: <%= current_user.points %></p>
+
+<div id="notes-list">
+  <%= turbo_frame_tag "notes" do %>
+    <%= render @notes %>
+  <% end %>
+</div>
