@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   post "chats/create", to: "chats#create"
   get "chats/home", to: "chats#new", as: :chats_home
 
+  # Notes
+  resources :notes
+
   # API
   namespace :api do
     get "hello", to: "api#hello"
