@@ -1,9 +1,11 @@
-<div class="note" id="<%= dom_id(note) %>">
-  <p><%= note.content %></p>
-  <%= form_with model: note, method: :patch, local: false do |form| %>
-    <%= form.check_box :completed, checked: note.completed %>
-    <%= form.submit 'Mark as Done' %>
+<div class="bg-white shadow-md rounded-lg p-4 mb-4" id="<%= dom_id(note) %>">
+  <p class="text-gray-800 mb-2"><%= note.content %></p>
+  <%= form_with model: note, method: :patch, local: false, class: "flex items-center mb-2" do |form| %>
+    <%= form.check_box :completed, checked: note.completed, class: "mr-2" %>
+    <%= form.submit 'Mark as Done', class: "bg-green-500 hover:bg-green-600 text-white font-bold py-1 px-2 rounded text-sm" %>
   <% end %>
-  <%= link_to 'Edit', edit_note_path(note) %> | 
-  <%= link_to 'Delete', note_path(note), method: :delete %>
+  <div class="flex space-x-2">
+    <%= link_to 'Edit', edit_note_path(note), class: "text-blue-500 hover:text-blue-700" %>
+    <%= link_to 'Delete', note_path(note), method: :delete, class: "text-red-500 hover:text-red-700" %>
+  </div>
 </div>

@@ -1,12 +1,12 @@
-<h1>Notes</h1>
+<h1 class="text-3xl font-bold mb-6">Notes</h1>
 
-<div>
-  <%= link_to "Create Note", new_note_path, class: "button" %>
+<div class="mb-4">
+  <%= link_to "Create Note", new_note_path, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
 </div>
 
-<p>Your Points: <%= current_user.points %></p>
+<p class="text-lg mb-4">Your Points: <span class="font-semibold"><%= current_user.points %></span></p>
 
-<div id="notes-list">
+<div id="notes-list" class="space-y-4">
   <%= turbo_frame_tag "notes" do %>
     <%= render @notes %>
   <% end %>
