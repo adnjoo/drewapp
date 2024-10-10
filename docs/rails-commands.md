@@ -39,9 +39,9 @@
 ### Miscellaneous
 
 - **Count SLOC:**  
-  `rake stats`
+  `rails stats`
 - **Save stats to file:**  
-  `rake custom:stats_to_file`
+  `rails custom:stats_to_file`
 - **Generate a password:**  
   `BCrypt::Password.create('password1')`
 - **See current database:**  
