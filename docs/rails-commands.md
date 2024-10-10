@@ -36,6 +36,14 @@
 - **Run migrations:**  
   `rails db:migrate`
 
+- **Show schema for `users`:**  
+  ```ruby
+  ActiveRecord::Base.connection.columns(:users).each do |column|
+    puts "#{column.name.ljust(25)} : #{column.sql_type}"
+  end
+  nil
+  ```
+
 ### Miscellaneous
 
 - **Count SLOC:**  
