@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_08_174342) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_10_124630) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,6 +21,23 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_08_174342) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_articles_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "to_dos", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.boolean "completed"
+    t.bigint "user_id", null: false
+    t.integer "points"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_to_dos_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -36,4 +53,5 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_08_174342) do
   end
 
   add_foreign_key "articles", "users"
+  add_foreign_key "to_dos", "users"
 end
