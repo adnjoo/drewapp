@@ -13,4 +13,8 @@ module ApplicationHelper
     else "bg-blue-500"
     end
   end
+
+  def app_name
+    "DrewApp"
+  end
 end

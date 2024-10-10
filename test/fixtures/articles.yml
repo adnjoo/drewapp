@@ -1,9 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  body: MyText
+  title: "Boost Productivity with DrewApp"
+  body: "DrewApp helps you manage your tasks efficiently with AI-powered insights and seamless integration across your devices. Perfect for professionals and digital nomads looking to stay organized."
 
 two:
-  title: MyString
-  body: MyText
+  title: "Organize Your Life with DrewApp's Task Manager"
+  body: "Stay on top of your projects with DrewApp. Our intuitive task management system helps you prioritize and track your goals, giving you the productivity boost you need every day."
