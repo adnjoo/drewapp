@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   # Marketing
   root "landing_page#index"
+
   # Blog
+  get "/blog", to: "articles#index"
   resources :articles
 
   # AI
